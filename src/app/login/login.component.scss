@@ -1,0 +1,32 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  mat-hint {
+    color: red;
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    img {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+  }
+  .form-container {
+    button {
+      width: 100%;
+    }
+    .login-btn {
+      margin-top: 20px;
+    }
+    .signup-link {
+      text-align: end;
+    }
+  }
+}

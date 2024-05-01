@@ -1,0 +1,54 @@
+<main class="container">
+  <div class="image-container">
+    <img src="../../assets/images/login.png" alt="Login image" />
+  </div>
+  <div class="form-container">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input matInput placeholder="hi@imdariful.com" name="email" />
+        <mat-icon matSuffix
+          ><span class="material-icons"> account_circle </span></mat-icon
+        >
+        @if(showEmailHint) {
+        <mat-hint>Hint</mat-hint>
+        }
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" name="password" />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+          class="password-btn"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+        @if(showPasswordHint) {
+        <mat-hint
+          >Must contain Uppercase, Lower case, symbol and numbers</mat-hint
+        >
+        }
+      </mat-form-field>
+    </p>
+
+    <p>
+      <button
+        class="login-btn"
+        mat-raised-button
+        color="primary"
+        (click)="handleLogin()"
+      >
+        Login
+      </button>
+    </p>
+    <p class="signup-link">
+      <a [routerLink]="'/signup'">Don't have an account?</a>
+    </p>
+  </div>
+</main>
